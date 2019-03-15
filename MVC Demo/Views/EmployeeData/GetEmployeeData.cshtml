@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MVC_Demo.Models.Employee>
+@{
+    Layout = null;
+    ViewBag.title = "Employee Data";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetEmployeeData</title>
+</head>
+<body>
+    <div>
+        <h3>Employee Data</h3>
+        <table class="table table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(e => e.EmployeeId)</th>
+                    <th>@Html.DisplayNameFor(e => e.EmployeeName)</th>
+                    <th>@Html.DisplayNameFor(e => e.Address)</th>
+                    <th>@Html.DisplayNameFor(e => e.Phone)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var employee in Model)
+                {
+                    <tr>
+                        <td>@employee.EmployeeId</td>
+                        <td>@employee.EmployeeName</td>
+                        <td>@employee.Address</td>
+                        <td>@employee.Phone</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
